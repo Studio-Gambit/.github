@@ -1,0 +1,76 @@
+name: Bug Report
+description: Report a bug found in production or staging
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Where was this bug discovered?
+      placeholder: "e.g., staging, production, user feedback, testing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: What happened? Include error messages if available.
+      placeholder: |
+        BusinessException: "Something went wrong"
+
+        Or describe the unexpected behavior...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. Navigate to...
+        2. Click on...
+        3. Observe error
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Any relevant IDs, logs, or additional context
+      placeholder: |
+        WorkOrder ID: xxx
+        Execution ID: xxx
+
+        Log snippet:
+        ```
+        ...
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: root-cause
+    attributes:
+      label: Root Cause (if known)
+      description: What caused this bug? (fill in after investigation)
+      placeholder: |
+        The `ApplyOverrides` method didn't handle XOR constraint...
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Fix Applied
+      description: How was it fixed? (fill in after resolution)
+      placeholder: |
+        Modified ConfigMergeExtensions.cs to clear conflicting fields when switching modes.
+
+        Files: ConfigMergeExtensions.cs
+        Tests: ConfigMergeExtensionsTests.cs
+    validations:
+      required: false

@@ -1,0 +1,64 @@
+name: Feature / Enhancement
+description: Request a new feature or modification to existing functionality
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the system does this affect?
+      options:
+        - Admin
+        - Portal
+        - AligatorPlus
+        - Infrastructure
+        - Multiple
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What should be built or changed?
+      placeholder: |
+        Add bulk order placement for portal customers...
+
+        Or: Modify the workflow export to include segment origin breakdown...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this needed? What problem does it solve?
+      placeholder: |
+        Customers currently have to create orders one at a time, which is slow for large projects...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know it's done?
+      placeholder: |
+        - [ ] Customer can upload multiple files in one order
+        - [ ] Order summary shows total word count
+        - [ ] ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Related issues, ADRs, screenshots, mockups, or other references
+      placeholder: |
+        Related: #123
+        ADR: ADR-008
+        Mockup: [link]
+    validations:
+      required: false
